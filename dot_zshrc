@@ -18,3 +18,4 @@ if test -d ~/.antidote ; then
 fi
 
 test -d ~/.zsh && source ~/.zsh/initrc
+test -d ~/.zsh-local && source ~/.zsh-local/initrc
