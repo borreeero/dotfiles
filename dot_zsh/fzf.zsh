@@ -1,5 +1,8 @@
 # Use this in place of ohmyzsh/ohmyzsh path:plugins/fzf so we can use our modified completion.zsh, key-bindings.zsh.
 
+# Enable if fzf is installed
+type fzf &>/dev/null || return
+
 source "${0:A:h}/fzf/completion.zsh"
 source "${0:A:h}/fzf/key-bindings.zsh"
 
