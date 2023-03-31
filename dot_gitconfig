@@ -1,0 +1,44 @@
+[user]
+	name = Cristóbal Borrero
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[alias]
+	tree = log --oneline --graph --decorate --color=always
+	root = rev-parse --show-toplevel
+	mergelog = log --oneline --graph ORIG_HEAD..
+[diff]
+	guitool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	guitool = vscode
+[mergetool "vscode"]
+	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[mergetool]
+	keepBackup = false
+[core]
+	editor = vim
+	# default is less -FRX, but -X breaks mouse wheel support
+	pager = less -FR
+	# Default excludesFile: ${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore
+[fetch]
+	prune = true
+	recurseSubmodules = on-demand
+	parallel = 0  # "some reasonable default"
+[pull]
+	rebase = interactive
+[submodule]
+	recurse = true
+[tag]
+	sort = version:refname
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[rebase]
+	autoSquash = true
+[include]
+	path = .gitconfig-local

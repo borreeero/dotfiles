@@ -1,0 +1,8 @@
+# -*- mode: sh -*-
+# ~/.zprofile: executed by the command interpreter for login shells.
+
+# When zsh is the default shell, .zprofile is sourced on Wayland, but
+# on X11 .profile is always sourced instead!
+# https://superuser.com/a/187673
+
+emulate sh -c '. ~/.profile'

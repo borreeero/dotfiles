@@ -1,0 +1,20 @@
+# Homebrew zsh completion, must be done before Oh My Zsh
+if type brew &>/dev/null
+then
+  fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+fi
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+
+# Antidote
+if test -d ~/.antidote ; then
+  source ~/.antidote/antidote.zsh
+  antidote load  # ~/.zsh_plugins.txt
+fi
+
+test -d ~/.zsh && source ~/.zsh/initrc
