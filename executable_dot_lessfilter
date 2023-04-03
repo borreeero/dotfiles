@@ -1,0 +1,32 @@
+#!/bin/sh
+
+mime=$(file -bL --mime-type "$1")
+category=${mime%%/*}
+kind=${mime##*/}
+
+has() {
+	command -v "$1" >/dev/null 2>&1
+}
+
+if [ -d "$1" ]; then
+	# exa -hl --color=always --color-scale --icons "$1"
+	# exa -1 --color=always --icons "$1" && echo # always produce some output
+	tree -C -L 4 "$1"
+elif [ ! -s "$1" ]; then
+	echo "$(tput bold)<EMPTY>$(tput sgr0)"
+elif [ "$category" = text ] && [ -z "${1%%*.md}" ] && has glow; then
+	glow --style "dark" -w "$(tput cols)" "$1"
+elif [ "$category" = text ] && has bat; then
+	bat --color=always --style=numbers "$1"
+elif [ "$category" = text ]; then  # fallback
+	cat "$1"
+elif [ "$category" = video -o "$kind" = gif ] && has chafa; then
+	chafa "$1" | sed 's/\x1b\[[0-9]*A/\x1b\[2J/g'
+elif [ "$category" = image ] && has chafa; then
+	chafa "$1" ${FZF_PREVIEW_COLUMNS:+-s "${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}"}
+else
+	# Not handled
+	exit 1
+fi
+
+exit 0
