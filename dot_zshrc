@@ -17,5 +17,9 @@ if test -d ~/.antidote ; then
   antidote load  # ~/.zsh_plugins.txt
 fi
 
-test -d ~/.zsh && source ~/.zsh/initrc
-test -d ~/.zsh-local && source ~/.zsh-local/initrc
+if test -d ~/.zsh ; then
+  source ~/.zsh/initrc
+fi
+if test -d ~/.zsh-local ; then
+  source ~/.zsh-local/initrc
+fi
