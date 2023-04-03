@@ -1,5 +1,7 @@
 # fzf-tab options
 
+type fzf &>/dev/null || { disable-fzf-tab 2>/dev/null; return; }
+
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 # no prefix: https://github.com/Aloxaf/fzf-tab/pull/183#issuecomment-787080931
