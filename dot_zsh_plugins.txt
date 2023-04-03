@@ -1,7 +1,7 @@
 # Run before compinit
-zsh-users/zsh-completions
+zsh-users/zsh-completions path:src kind:fpath
 
-ohmyzsh/ohmyzsh
+ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/command-not-found
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages
