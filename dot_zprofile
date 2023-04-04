@@ -1,8 +1,24 @@
 # -*- mode: sh -*-
 # ~/.zprofile: executed by the command interpreter for login shells.
 
+# Note about /etc/zsh/zprofile:
+# /etc/profile should be sourced by all POSIX sh-compatible
+# shells upon login. This is not honored for the zsh shell
+# in Debian or Ubuntu.
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776663
+# https://bugs.launchpad.net/ubuntu/+source/zsh/+bug/1800280
+#emulate sh -c 'source /etc/profile'
+
+# Workaround vscode launching a login shell to setup environment.
+[ -n "${ZPROFILE_SOURCED}" ] && return
+export ZPROFILE_SOURCED=1
+
 # When zsh is the default shell, .zprofile is sourced on Wayland, but
 # on X11 .profile is always sourced instead!
 # https://superuser.com/a/187673
 
 emulate sh -c '. ~/.profile'
+
+#
+# .zprofile
+#
