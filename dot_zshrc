@@ -13,6 +13,7 @@ fi
 
 # Antidote
 if test -d ~/.antidote ; then
+  zstyle ':antidote:bundle' use-friendly-names 'yes'
   source ~/.antidote/antidote.zsh
   antidote load  # ~/.zsh_plugins.txt
 fi
