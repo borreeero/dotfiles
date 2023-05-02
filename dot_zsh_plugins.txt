@@ -1,5 +1,5 @@
 # Run before compinit
-zsh-users/zsh-completions path:src kind:fpath
+zsh-users/zsh-completions
 
 ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/git
@@ -13,6 +13,9 @@ ohmyzsh/ohmyzsh path:plugins/docker-compose
 ohmyzsh/ohmyzsh path:plugins/web-search
 ohmyzsh/ohmyzsh path:plugins/z
 ohmyzsh/ohmyzsh path:plugins/alias-finder
+
+# Initialize completion (compinit)
+belak/zsh-utils path:completion
 
 # Note: fzf-tab must be loaded after compinit, but before plugins which will wrap widgets (zsh-autosuggestions).
 Aloxaf/fzf-tab
