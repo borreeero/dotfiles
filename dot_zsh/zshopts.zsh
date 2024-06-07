@@ -16,3 +16,7 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 # End of partial line (return symbol on red background)
 PROMPT_EOL_MARK=$'%K{red}\u23ce %k'
 
+# Remove duplicates
+typeset -U path
+typeset -U fpath
+

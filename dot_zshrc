@@ -11,10 +11,19 @@ fi
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
+## Enable zsh correction via ohmyzsh
+#export ENABLE_CORRECTION=true
+
 # Antidote
 if test -d ~/.antidote ; then
   zstyle ':antidote:bundle' use-friendly-names 'yes'
   source ~/.antidote/antidote.zsh
+
+  # Set omz variables prior to loading omz plugins
+  ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
+  mkdir -p "$ZSH_CACHE_DIR/completions"
+  (( ${fpath[(Ie)"$ZSH_CACHE_DIR/completions"]} )) || fpath=("$ZSH_CACHE_DIR/completions" $fpath)
+
   antidote load  # ~/.zsh_plugins.txt
 fi
 

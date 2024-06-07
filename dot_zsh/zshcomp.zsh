@@ -8,7 +8,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' insert-tab false
 
 # git
-zstyle ':completion:complete:git-*' sort false  # trust order of git completion
+zstyle ':completion:complete:git*' sort false  # trust order of git completion
 
 # processes
 zstyle ':completion:*:*:*:*:processes' command 'ps -u $USERNAME -o pid,user,cmd -w -w'

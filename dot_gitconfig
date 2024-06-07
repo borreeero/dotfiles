@@ -30,8 +30,8 @@
 	parallel = 0  # "some reasonable default"
 [pull]
 	rebase = interactive
-[submodule]
-	recurse = true
+#[submodule]
+#	recurse = true
 [tag]
 	sort = version:refname
 [init]
