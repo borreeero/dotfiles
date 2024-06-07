@@ -45,4 +45,3 @@ PATH="$HOME/.cargo/bin:$PATH"
 
 # ccache
 PATH="$HOME/.local/lib/ccache:/usr/lib/ccache:$PATH"
-. "$HOME/.cargo/env"

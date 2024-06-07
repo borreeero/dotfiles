@@ -6,6 +6,8 @@ My dotfiles, managed by [chezmoi](https://github.com/twpayne/chezmoi).
 
 Requires: curl, git.
 
+Optional: fzf, bat, chafa, [glow](https://github.com/charmbracelet/glow), ?ripgrep.
+
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply borreeero
 ```

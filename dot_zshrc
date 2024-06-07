@@ -14,6 +14,9 @@ fi
 ## Enable zsh correction via ohmyzsh
 #export ENABLE_CORRECTION=true
 
+autoload -Uz compinit
+compinit
+
 # Antidote
 if test -d ~/.antidote ; then
   zstyle ':antidote:bundle' use-friendly-names 'yes'
